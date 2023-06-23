@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jYanezExamen.Registro">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Brown"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="100"/>
+            </Style>
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+        
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblUsuario" FontSize="12" TextColor="red" HorizontalTextAlignment="End"/>
+            <Label Text="REGISTRO" FontSize="30" HorizontalTextAlignment="Center"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="FECHA" FontSize="20" Grid.Row="0" Grid.Column="0" Style="{StaticResource globalSytile}"/>
+                <Label Text="PAIS" FontSize="20" Grid.Row="1" Grid.Column="0" Style="{StaticResource globalSytile}"/>
+                <Label Text="CUIDAD" FontSize="20" Grid.Row="2" Grid.Column="0" Style="{StaticResource globalSytile}"/>
+                <Label Text="MONTO INICIAL" FontSize="20" Grid.Row="3" Grid.Column="0" Style="{StaticResource globalSytile}"/>
+                <Entry Keyboard="Numeric" x:Name="Monto" Placeholder="Monto inicial" Grid.Row="3" Grid.Column="1"/>
+                <Label Text="PAGO MENSUAL" FontSize="20" Grid.Row="4" Grid.Column="0" Style="{StaticResource globalSytile}"/>
+                <Entry x:Name="Pago" Placeholder="Pago mensual" Grid.Row="4" Grid.Column="1" IsReadOnly="True"/>
+
+                <DatePicker x:Name="dpDate" Date="06/22/2023" Format="MM/dd/yyyy" Grid.Row="0" Grid.Column="1"/>
+                <Picker x:Name="dpCountry" Title="Paises" SelectedIndexChanged="dpCountry_SelectedIndexChanged" Grid.Row="1" Grid.Column="1">
+                    <Picker.Items>
+                        <x:String>Ecuador</x:String>
+                        <x:String>China</x:String>
+                        <x:String>Japon</x:String>
+                        <x:String>España</x:String>
+                        <x:String>Mexico</x:String>
+                        <x:String>Canada</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker x:Name="dpCity" Title="Ciudades" SelectedIndexChanged="dpCity_SelectedIndexChanged" Grid.Row="2" Grid.Column="1">
+                    <Picker.Items>
+                        <x:String>Guayakill</x:String>
+                        <x:String>Ambato</x:String>
+                        <x:String>Quito</x:String>
+                        <x:String>Tulcan</x:String>
+                        <x:String>Toronto</x:String>
+                        <x:String>Pekin</x:String>
+                        <x:String>Madrid</x:String>
+                    </Picker.Items>
+                </Picker>
+               
+                
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Nombre" FontSize="20" Grid.Row="0" Grid.Column="0" Style="{StaticResource globalSytile}"/>
+                <Entry x:Name="txtNombre" Placeholder="Nombre" Grid.Row="1" Grid.Column="0"/>
+                <Label Text="Apellido" FontSize="20" Grid.Row="0" Grid.Column="1" Style="{StaticResource globalSytile}"/>
+                <Entry x:Name="txtApellido" Placeholder="Apellido" Grid.Row="1" Grid.Column="1"/>
+                <Label Text="Edad" FontSize="20" Grid.Row="0" Grid.Column="2" Style="{StaticResource globalSytile}"/>
+                <Entry x:Name="txtEdad" Placeholder="Edad" Grid.Row="1" Grid.Column="2"/>
+                
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+               <RowDefinition/>                    
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnPagoMensual" Text=" CALCULAR PAGO MENSUAL" Clicked="btnPagoMensual_Clicked" Grid.Row="0" Grid.Column="0" Style="{StaticResource buttonStyle}"/>
+                <Button x:Name="btnResumen" Text="RESUMEN" Clicked="btnResumen_Clicked"  Grid.Row="0" Grid.Column="1"  Style="{StaticResource buttonStyle}"/>
+                
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
