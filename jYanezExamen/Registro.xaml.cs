@@ -41,6 +41,7 @@ namespace jYanezExamen
             string dt6 = Monto.Text;
             string dt7 = Pago.Text;
 
+            Navigation.PushAsync(new Resumen( dt1, dt2, dt3, dt4,dt5,dt6, dt7 ));
             
         }
 
